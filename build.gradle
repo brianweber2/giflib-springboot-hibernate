@@ -17,4 +17,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web:2.2.2.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.2.2.RELEASE'
+    implementation 'org.springframework:spring-orm:4.2.5.RELEASE'
+    implementation 'org.hibernate:hibernate-core:5.1.0.Final'
+    implementation 'org.hashids:hashids:1.0.1'
+    implementation 'org.apache.tomcat:tomcat-dbcp:8.0.32'
+    implementation 'com.h2database:h2:1.4.191'
 }
