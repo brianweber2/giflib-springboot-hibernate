@@ -16,15 +16,9 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     @SuppressWarnings("unchecked")
     public List<Category> findAll() {
-        // Open a session
         Session session = sessionFactory.openSession();
-
-        // Get all categories with a Hibernate criteria obj
         List<Category> categories = session.createCriteria(Category.class).list();
-
-        // Close the session
         session.close();
-
         return categories;
     }
 
@@ -35,7 +29,11 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public void save(Category category) {
-
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(category);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
